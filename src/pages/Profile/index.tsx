@@ -13,9 +13,9 @@ import * as S from "./styles";
 
 const container = ".tagcloud";
 const texts = [
-    "JavaScript", "HTML5", "CSS3",
-    "SCSS", "React", "Redux",
-    "API Integration","Python", "MySQL",
+    "JavaScript", "HTML5", "CSS3", "TypeScript", 
+    "SCSS", "React", "Redux", "Clojure", "Restful API",
+    "Integrations","Python", "PostgreSQL",
     "MongoDB", "WebSocket", "TypeScript"
 ];
 
@@ -97,7 +97,7 @@ function Profile(): ReactElement {
           Let’s connect!
         </S.SectionContent>
         <S.ContactSectionSocialIconsContainer>
-          <S.ContactSectionSocialIconsButton href="https://www.linkedin.com/in/yuchen-zhao-69a3a3ab">
+          <S.ContactSectionSocialIconsButton href="https://www.linkedin.com/in/ychenz">
             <LinkedinIcon />
           </S.ContactSectionSocialIconsButton>
           {/* <S.ContactSectionSocialIconsButton href="https://www.facebook.com/profile.php?id=100008167328586">
