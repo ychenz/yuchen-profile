@@ -65,7 +65,7 @@ function Profile(): ReactElement {
       <S.SectionTitle>CONNECT WITH ME</S.SectionTitle>
       <S.ContactSectionContainer>
         <S.SectionContent>
-          I can’t wait to help you make your dream website into reality. Let’s chat!
+          Let’s connect!
         </S.SectionContent>
         <S.ContactSectionSocialIconsContainer>
           <S.ContactSectionSocialIconsButton href="https://www.linkedin.com/in/yuchen-zhao-69a3a3ab">
@@ -94,20 +94,23 @@ function Profile(): ReactElement {
   );
 
   return (
-      <S.Root>
-          <S.TopBar>
-              <S.IconContainer href="http://blog.yuchenz.net">
-                  <LogoIcon />
-              </S.IconContainer>
-          </S.TopBar>
-          {renderSelfIntroSection()}
-          {renderDemosSection()}
+    <S.Root>
+      <S.TopBar>
+        <a href="http://blog.yuchenz.net">
+          <S.BackButton type="button">&#8592;{" "}BACK TO BLOG</S.BackButton>
+        </a>
+        <S.IconContainer href="http://blog.yuchenz.net">
+            <LogoIcon />
+        </S.IconContainer>
+      </S.TopBar>
+      {renderSelfIntroSection()}
+      {renderDemosSection()}
 
-          <S.FooterContainer>
-            {renderSkillsSection()}
-            {renderContactSection()}
-          </S.FooterContainer>
-      </S.Root>
+      <S.FooterContainer>
+        {renderSkillsSection()}
+        {renderContactSection()}
+      </S.FooterContainer>
+    </S.Root>
   );
 }
 
