@@ -1,10 +1,17 @@
 import React from 'react';
+import { Routes, Route } from "react-router-dom";
 import Profile from 'pages/Profile';
+import Demo from 'pages/Demo';
 
 function App() {
   return (
     <div>
-      <Profile />
+      <Routes>
+        <Route path="/" element={<Profile />} />
+        <Route path="demo">
+          <Route path=":demoName" element={<Demo />} />
+        </Route>
+      </Routes> 
     </div>
   );
 }

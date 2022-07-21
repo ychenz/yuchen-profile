@@ -1,6 +1,12 @@
 import React, { ReactElement, useEffect } from "react";
 import TagCloud from "TagCloud";
-import { ReactComponent as LogoIcon } from './LogoV1.svg';
+
+import { ReactComponent as LogoIcon } from "assets/LogoV1.svg";
+import { ReactComponent as EmailIcon }  from "./Email1.svg";
+import { ReactComponent as FacebookIcon }  from "./Facebook1.svg";
+import { ReactComponent as GithubIcon }  from "./Github1.svg";
+import { ReactComponent as LinkedinIcon }  from "./Linkedin1.svg";
+import DemosSection from "./DemosSection";
 
 import * as S from "./styles";
 
@@ -38,17 +44,71 @@ function Profile(): ReactElement {
     </S.SelfIntroSectionContainer>
   );
 
-    return (
-        <S.Root>
-            <S.TopBar>
-                <S.IconContainer href="http://blog.yuchenz.net">
-                    <LogoIcon />
-                </S.IconContainer>
-            </S.TopBar>
-            {renderSelfIntroSection()}
+  const renderDemosSection = (): ReactElement => (
+    <S.SectionContainer>
+      <S.SectionTitle>DEMOS</S.SectionTitle>
+      <DemosSection />
+    </S.SectionContainer>
+  );
 
-        </S.Root>
-    );
+  const renderSkillsSection = (): ReactElement => (
+    <S.SectionContainer>
+      <S.SectionTitle>SKILLS</S.SectionTitle>
+      <S.SkillsSectionTagCloudContainer>
+        <div className="tagcloud" />
+      </S.SkillsSectionTagCloudContainer>
+    </S.SectionContainer>
+  );
+
+  const renderContactSection = (): ReactElement => (
+    <S.SectionContainer>
+      <S.SectionTitle>CONNECT WITH ME</S.SectionTitle>
+      <S.ContactSectionContainer>
+        <S.SectionContent>
+          I can’t wait to help you make your dream website into reality. Let’s chat!
+        </S.SectionContent>
+        <S.ContactSectionSocialIconsContainer>
+          <S.ContactSectionSocialIconsButton href="https://www.linkedin.com/in/yuchen-zhao-69a3a3ab">
+            <LinkedinIcon />
+          </S.ContactSectionSocialIconsButton>
+          {/* <S.ContactSectionSocialIconsButton href="https://www.facebook.com/profile.php?id=100008167328586">
+            <FacebookIcon />
+          </S.ContactSectionSocialIconsButton> */}
+          <S.ContactSectionSocialIconsButton href="https://github.com/ychenz">
+            <GithubIcon />
+          </S.ContactSectionSocialIconsButton>
+          <S.ContactSectionSocialIconsButton href="mailto:yuchen@yuchenz.net">
+            <EmailIcon />
+          </S.ContactSectionSocialIconsButton>
+        </S.ContactSectionSocialIconsContainer>
+        <a href={process.env.PUBLIC_URL + "/resume-2022.pdf"}>
+          <S.ContactSectionDownloadResumeButton type="button">
+            Download Resume
+          </S.ContactSectionDownloadResumeButton>
+        </a>
+        <S.ContactSectionCopyRight>
+          © Yuchen Zhao 2020 - 2022
+        </S.ContactSectionCopyRight>
+      </S.ContactSectionContainer>
+    </S.SectionContainer>
+  );
+
+  return (
+      <S.Root>
+          <S.TopBar>
+              <S.IconContainer href="http://blog.yuchenz.net">
+                  <LogoIcon />
+              </S.IconContainer>
+          </S.TopBar>
+          {renderSelfIntroSection()}
+          {renderDemosSection()}
+
+          <S.FooterContainer>
+            {renderSkillsSection()}
+            {renderContactSection()}
+          </S.FooterContainer>
+      </S.Root>
+  );
 }
 
 export default Profile;
