@@ -2,10 +2,10 @@ import React, { ReactElement, useEffect } from "react";
 import TagCloud from "TagCloud";
 
 import { ReactComponent as LogoIcon } from "assets/LogoV1.svg";
-import { ReactComponent as EmailIcon }  from "./Email1.svg";
-import { ReactComponent as FacebookIcon }  from "./Facebook1.svg";
-import { ReactComponent as GithubIcon }  from "./Github1.svg";
-import { ReactComponent as LinkedinIcon }  from "./Linkedin1.svg";
+import { ReactComponent as EmailIcon }  from "assets/Email1.svg";
+import { ReactComponent as FacebookIcon }  from "assets/Facebook1.svg";
+import { ReactComponent as GithubIcon }  from "assets/Github1.svg";
+import { ReactComponent as LinkedinIcon }  from "assets/Linkedin1.svg";
 import DemosSection from "./DemosSection";
 
 import * as S from "./styles";
