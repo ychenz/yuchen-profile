@@ -7,6 +7,7 @@ import { ReactComponent as FacebookIcon }  from "assets/Facebook1.svg";
 import { ReactComponent as GithubIcon }  from "assets/Github1.svg";
 import { ReactComponent as LinkedinIcon }  from "assets/Linkedin1.svg";
 import DemosSection from "./DemosSection";
+import EmploymentHistorySection from "./EmploymentHistorySection";
 
 import * as S from "./styles";
 
@@ -48,6 +49,34 @@ function Profile(): ReactElement {
     <S.SectionContainer>
       <S.SectionTitle>DEMOS</S.SectionTitle>
       <DemosSection />
+    </S.SectionContainer>
+  );
+
+  const pastWorkData = [
+    { thumbNail: "https://i.pinimg.com/originals/61/38/5d/61385d2070289b91e3f48de78a388ace.png", title: "Analytics Line Charts" },
+    { thumbNail: "https://i.pinimg.com/originals/7c/af/52/7caf52b79a22b58e8a45bcc61e24b1ed.png", title: "Analytics Table" },
+    { thumbNail: "https://i.pinimg.com/originals/c1/76/eb/c176ebd4c94025a3249cbb93718ae720.png", title: "Analytics Dashboard" },
+  ];
+  const renderPastWorkSection = (): ReactElement => (
+    <S.SectionContainer>
+      <S.SectionTitle>PAST WORKS</S.SectionTitle>
+      <S.PastWorkSectionContainer>
+        {pastWorkData.map(data => (
+          <S.PastWorkSectionEntry key={data.title}>
+            <S.PastWorkSectionEntryThumbnail>
+              <img src={data.thumbNail} alt={data.title} />
+            </S.PastWorkSectionEntryThumbnail>
+            <S.PastWorkSectionEntryTitle type="button">{data.title}</S.PastWorkSectionEntryTitle>
+          </S.PastWorkSectionEntry>
+        ))}
+      </S.PastWorkSectionContainer>
+    </S.SectionContainer>
+  );
+
+  const renderEmploymentHistorySection = (): ReactElement => (
+    <S.SectionContainer>
+      <S.SectionTitle>EMPLOYMENT HISTORY</S.SectionTitle>
+      <EmploymentHistorySection />
     </S.SectionContainer>
   );
 
@@ -105,6 +134,8 @@ function Profile(): ReactElement {
       </S.TopBar>
       {renderSelfIntroSection()}
       {renderDemosSection()}
+      {renderPastWorkSection()}
+      {renderEmploymentHistorySection()}
 
       <S.FooterContainer>
         {renderSkillsSection()}
