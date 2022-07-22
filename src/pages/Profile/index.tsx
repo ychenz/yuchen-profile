@@ -34,7 +34,7 @@ function Profile(): ReactElement {
       <S.SelfIntroSectionTitle>YUCHEN</S.SelfIntroSectionTitle>
       <S.SelfIntroSectionContainer>
         <S.SectionContent>
-          I’m a professional full-stack web engineer based in Toronto.
+          I’m a professional software engineer based in Toronto.
           <br />
           Since 2018, I have been working for Ada as a web developer and the projects I built have assisted the
           company to grow its revenue by 100% from 2018 to year end 2020. I am specialized in building front-end
@@ -116,7 +116,7 @@ function Profile(): ReactElement {
           </S.ContactSectionDownloadResumeButton>
         </a>
         <S.ContactSectionCopyRight>
-          © Yuchen Zhao 2020 - 2022
+          © Yuchen Zhao 2022
         </S.ContactSectionCopyRight>
       </S.ContactSectionContainer>
     </S.SectionContainer>
@@ -125,10 +125,10 @@ function Profile(): ReactElement {
   return (
     <S.Root>
       <S.TopBar>
-        <a href="http://blog.yuchenz.net">
+        <a href="http://www.yuchenz.net">
           <S.BackButton type="button">&#8592;{" "}BACK TO BLOG</S.BackButton>
         </a>
-        <S.IconContainer href="http://blog.yuchenz.net">
+        <S.IconContainer href="http://www.yuchenz.net">
             <LogoIcon />
         </S.IconContainer>
       </S.TopBar>
