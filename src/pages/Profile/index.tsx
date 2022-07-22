@@ -125,10 +125,10 @@ function Profile(): ReactElement {
   return (
     <S.Root>
       <S.TopBar>
-        <a href="http://www.yuchenz.net">
+        <a href="https://www.yuchenz.net">
           <S.BackButton type="button">&#8592;{" "}BACK TO BLOG</S.BackButton>
         </a>
-        <S.IconContainer href="http://www.yuchenz.net">
+        <S.IconContainer href="https://www.yuchenz.net">
             <LogoIcon />
         </S.IconContainer>
       </S.TopBar>
