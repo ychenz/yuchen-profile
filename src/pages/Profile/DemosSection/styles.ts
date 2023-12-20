@@ -59,4 +59,9 @@ export const DemoCardActionsPlay = styled.a<{ color?: string }>`
   margin-left: ${cssVariables.uiUnitDouble};
 `;
 
+export const PngIcon = styled.img`
+  max-height: 64px;
+  max-width: 64px;
+`;
+
 export const Root = DemosSection;

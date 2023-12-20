@@ -2,10 +2,9 @@ import React, { ReactElement, useEffect } from "react";
 import TagCloud from "TagCloud";
 
 import { ReactComponent as LogoIcon } from "assets/LogoV1.svg";
-import { ReactComponent as EmailIcon }  from "assets/Email1.svg";
-import { ReactComponent as FacebookIcon }  from "assets/Facebook1.svg";
-import { ReactComponent as GithubIcon }  from "assets/Github1.svg";
-import { ReactComponent as LinkedinIcon }  from "assets/Linkedin1.svg";
+import { ReactComponent as EmailIcon } from "assets/Email1.svg";
+import { ReactComponent as GithubIcon } from "assets/Github1.svg";
+import { ReactComponent as LinkedinIcon } from "assets/Linkedin1.svg";
 import DemosSection from "./DemosSection";
 import EmploymentHistorySection from "./EmploymentHistorySection";
 
@@ -13,10 +12,10 @@ import * as S from "./styles";
 
 const container = ".tagcloud";
 const texts = [
-    "JavaScript", "HTML5", "CSS3", "TypeScript", 
-    "SCSS", "React", "Redux", "Clojure", "Restful API",
-    "Integrations","Python", "PostgreSQL",
-    "MongoDB", "WebSocket", "TypeScript"
+  "JavaScript", "HTML5", "CSS3", "TypeScript",
+  "SCSS", "React", "Redux", "Clojure", "Restful API",
+  "Integrations", "Python", "PostgreSQL",
+  "MongoDB", "WebSocket", "TypeScript", "Solidity"
 ];
 
 function Profile(): ReactElement {
@@ -36,10 +35,10 @@ function Profile(): ReactElement {
         <S.SectionContent>
           I’m a professional software engineer based in Toronto.
           <br />
-          Since 2018, I have been working for Ada as a web developer and the projects I built have assisted the
+          {/* Since 2018, I have been working for Ada as a web developer and the projects I built have assisted the
           company to grow its revenue by 100% from 2018 to year end 2020. I am specialized in building front-end
           applications using React & Redux to implement design solutions that satisfy complex user requirements.
-          I strive to write high performance code that is highly modular and maintainable.
+          I strive to write high performance code that is highly modular and maintainable. */}
         </S.SectionContent>
       </S.SelfIntroSectionContainer>
     </S.SelfIntroSectionContainer>
@@ -52,6 +51,7 @@ function Profile(): ReactElement {
     </S.SectionContainer>
   );
 
+  // WIP
   const pastWorkData = [
     { thumbNail: "https://i.pinimg.com/originals/61/38/5d/61385d2070289b91e3f48de78a388ace.png", title: "Analytics Line Charts" },
     { thumbNail: "https://i.pinimg.com/originals/7c/af/52/7caf52b79a22b58e8a45bcc61e24b1ed.png", title: "Analytics Table" },
@@ -110,13 +110,13 @@ function Profile(): ReactElement {
             <EmailIcon />
           </S.ContactSectionSocialIconsButton>
         </S.ContactSectionSocialIconsContainer>
-        <a href={process.env.PUBLIC_URL + "/resume-2022.pdf"}>
+        <a href={process.env.PUBLIC_URL + "/resume-2024.pdf"}>
           <S.ContactSectionDownloadResumeButton type="button">
             Download Resume
           </S.ContactSectionDownloadResumeButton>
         </a>
         <S.ContactSectionCopyRight>
-          © Yuchen Zhao 2022
+          © Yuchen Zhao 2024
         </S.ContactSectionCopyRight>
       </S.ContactSectionContainer>
     </S.SectionContainer>
@@ -125,17 +125,17 @@ function Profile(): ReactElement {
   return (
     <S.Root>
       <S.TopBar>
-        <a href="https://www.yuchenz.net">
+        {/* <a href="https://www.yuchenz.net">
           <S.BackButton type="button">&#8592;{" "}BACK TO BLOG</S.BackButton>
-        </a>
+        </a> */}
         <S.IconContainer href="https://www.yuchenz.net">
-            <LogoIcon />
+          <LogoIcon />
         </S.IconContainer>
       </S.TopBar>
       {renderSelfIntroSection()}
       {renderDemosSection()}
-      {renderPastWorkSection()}
-      {renderEmploymentHistorySection()}
+      {/* {renderPastWorkSection()}
+      {renderEmploymentHistorySection()} */}
 
       <S.FooterContainer>
         {renderSkillsSection()}

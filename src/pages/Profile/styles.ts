@@ -86,7 +86,7 @@ export const SelfIntroSectionTitle = styled.div`
 
 export const SelfIntroSectionContainer = styled.div`
   max-width: 700px;
-  margin-top: 64px;
+  margin-top: 32px;
 `;
 
 /**

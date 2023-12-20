@@ -5,13 +5,12 @@ import { demosList } from "pages/Profile/DemosSection";
 
 import * as PortfolioPageStyle from "pages/Profile/styles";
 import { ReactComponent as LogoIcon } from "assets/LogoV1.svg";
-import { ReactComponent as OpenInNewIcon }  from "assets/OpenInNew.svg";
+import { ReactComponent as OpenInNewIcon } from "assets/OpenInNew.svg";
 
 import * as S from "./styles";
 
 export default function Demo(): ReactElement {
   const { demoName } = useParams();
-  console.log(demoName);
 
   const selectedDemoOption = demosList.find(
     demoOption => demoOption.value === demoName
@@ -39,7 +38,7 @@ export default function Demo(): ReactElement {
         {selectedDemoOption.description}
       </S.Description>
       <S.DemoIFrameContainer>
-        <S.DemoIFrame src={selectedDemoOption.url} title={`${selectedDemoOption.name} Demo`} frameBorder="0" />
+        <S.DemoIFrame src={selectedDemoOption.url!} title={`${selectedDemoOption.name} Demo`} frameBorder="0" />
       </S.DemoIFrameContainer>
       <S.ViewCodeButton href={selectedDemoOption.sourceUrl}>
         <div>View Code</div>

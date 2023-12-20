@@ -1,12 +1,13 @@
 import React, { ReactElement } from "react";
 import { Link } from "react-router-dom";
 
-import  { ReactComponent as BarChartIcon } from "assets/BarChart.svg";
-import  { ReactComponent as GamePadIcon } from "assets/GamePad.svg";
-import  { ReactComponent as CloudApiIcon } from "assets/CloudApi.svg";
-import  { ReactComponent as DocumentIcon } from "assets/Document.svg";
-import  { ReactComponent as GithubOutlineIcon } from "assets/GithubOutline.svg";
-import  { ReactComponent as PlayOutlineIcon } from "assets/PlayOutline.svg";
+import { ReactComponent as BarChartIcon } from "assets/BarChart.svg";
+import { ReactComponent as GamePadIcon } from "assets/GamePad.svg";
+import { ReactComponent as CloudApiIcon } from "assets/CloudApi.svg";
+import { ReactComponent as DocumentIcon } from "assets/Document.svg";
+import { ReactComponent as GithubOutlineIcon } from "assets/GithubOutline.svg";
+import { ReactComponent as PlayOutlineIcon } from "assets/PlayOutline.svg";
+import bitcoinIcon from "assets/bitcoin.png";
 
 import { SectionSubTitle } from "../styles";
 import {
@@ -16,14 +17,15 @@ import {
   DemoCardIconContainer,
   DemoCardActionsContainer,
   DemoCardActionsViewCode,
-  DemoCardActionsPlay
+  DemoCardActionsPlay,
+  PngIcon
 } from "./styles";
 
-export interface DemoOption{
+export interface DemoOption {
   name: string;
-  value: string;
+  value: string | null;
   description: string;
-  url: string;
+  url: string | null;
   sourceUrl: string;
 }
 
@@ -41,6 +43,13 @@ export const demosList: DemoOption[] = [
     description: "Play Gomuku game with a smart bot player",
     url: "https://gomoku-demo.yuchenz.net/",
     sourceUrl: "https://github.com/ychenz/gomoku-web-game-demo"
+  },
+  {
+    name: "Web3 Blog Creator",
+    value: null,
+    description: "Prize winning web3 demo project that allows user creating a blog on decentralized web with just a few clicks",
+    url: null,
+    sourceUrl: "https://github.com/ychenz/web3-blog-creator"
   },
   // {
   //   name: "Integrations",
@@ -62,7 +71,7 @@ export default function DemosSection(): ReactElement {
   const iconsList = [
     <BarChartIcon />,
     <GamePadIcon />,
-    <CloudApiIcon />,
+    <PngIcon src={bitcoinIcon} alt="bitcoin-logo" />,
     <DocumentIcon />
   ];
 
@@ -87,9 +96,11 @@ export default function DemosSection(): ReactElement {
               <DemoCardActionsViewCode color="black" href={demoOption.sourceUrl}>
                 <GithubOutlineIcon />
               </DemoCardActionsViewCode>
-              <Link to={`/demo/${demoOption.value}`}>
-                <DemoCardActionsPlay color={colors[i]}><PlayOutlineIcon /></DemoCardActionsPlay>
-              </Link>
+              {demoOption.value && (
+                <Link to={`/demo/${demoOption.value}`}>
+                  <DemoCardActionsPlay color={colors[i]}><PlayOutlineIcon /></DemoCardActionsPlay>
+                </Link>
+              )}
             </DemoCardActionsContainer>
           </div>
         </DemoCard>
